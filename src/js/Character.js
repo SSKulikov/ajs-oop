@@ -9,36 +9,40 @@ export default class Character {
   }
 
   static checkName(name) {
-    if (name.length >= 2 && name.length <= 10) {
-      return name;
+    if (name.length < 2 && name.length > 10) {
+      throw new Error('Имя должно быть 2 - 10 символов!');
     }
-    throw new Error('Имя должно быть 2 - 10 символов!');
+    return name;
   }
 
   static checkType(type) {
     const listChildClass = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
     if (listChildClass.includes(type)) {
-      return type;
+      throw new Error('Неверный тип!');
     }
-    throw new Error('Неверный тип!');
+    return type;
   }
 
   levelUp() {
-    if (this.health > 0) {
+    if (this.health < 0) {
+      throw new Error('Можно повышать уровень только живого персонажа');
+    }
+    else {
       this.level += 1;
       this.attack += this.attack * 0.2;
       this.defence += this.defence * 0.2;
       this.health = 100;
       return;
     }
-    throw new Error('Можно повышать уровень только живого персонажа');
   }
 
   damage(points) {
-    if ((this.health > 0)) {
+    if ((this.health < 0)) {
+      throw new Error('Можно атаковать только живого персонажа');
+    }
+    else {
       this.health -= points * (1 - this.defence / 100);
       return;
     }
-    throw new Error('Можно атаковать только живого персонажа');
   }
 }
