@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/mjwna6b3kp5cmn0y?svg=true)](https://ci.appveyor.com/project/SSKulikov/ajs-oop)
+
 # Домашнее задание к лекции «Классы, наследование»
 Важно: каждая задача выполняется в виде отдельного проекта с собственным GitHub репозиторием.
 

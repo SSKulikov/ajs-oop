@@ -1,8 +1,8 @@
 import Bowman from '../Bowman';
 
 test('test create Bowman', () => {
-  expect(new Bowman('Sniper')).toEqual({
-    name: 'Sniper',
+  expect(new Bowman('Strelok')).toEqual({
+    name: 'Strelok',
     type: 'Bowman',
     attack: 25,
     defence: 25,
