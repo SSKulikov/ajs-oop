@@ -20,12 +20,12 @@ test('test Error type', () => {
 });
 
 test('test levelUp', () => {
-  const bowman = new Character('Pirat', 'Bowman', 100, 1);
+  const bowman = new Character('Pegas', 'Bowman', 100, 1);
   bowman.attack = 50;
   bowman.defence = 2;
   bowman.levelUp();
   expect(bowman).toEqual({
-    name: 'Pirat',
+    name: 'Pegas',
     type: 'Bowman',
     health: 100,
     level: 2,
@@ -35,19 +35,19 @@ test('test levelUp', () => {
 });
 
 test('test levelUp check health < 0', () => {
-  const bowman = new Character('Pirat', 'Bowman', -100, 1);
+  const bowman = new Character('Pegas', 'Bowman', -100, 1);
   bowman.attack = 50;
   bowman.defence = 2;
   expect(() => { bowman.levelUp(); }).toThrowError();
 });
 
 test('test damage', () => {
-  const bowman = new Character('Pirat', 'Bowman', 100, 1);
+  const bowman = new Character('Pegas', 'Bowman', 100, 1);
   bowman.attack = 50;
   bowman.defence = 2;
   bowman.damage(10);
   expect(bowman).toEqual({
-    name: 'Pirat',
+    name: 'Pegas',
     type: 'Bowman',
     health: 90.2,
     level: 1,
@@ -57,7 +57,7 @@ test('test damage', () => {
 });
 
 test('test damage check health < 0', () => {
-  const bowman = new Character('Pirat', 'Bowman', -100, 1);
+  const bowman = new Character('Pegas', 'Bowman', -100, 1);
   bowman.attack = 50;
   bowman.defence = 2;
   expect(() => { bowman.damage(); }).toThrowError();
