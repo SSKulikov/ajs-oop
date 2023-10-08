@@ -26,23 +26,19 @@ export default class Character {
   levelUp() {
     if (this.health < 0) {
       throw new Error('Можно повышать уровень только живого персонажа');
-    }
-    else {
+    } else {
       this.level += 1;
       this.attack += this.attack * 0.2;
       this.defence += this.defence * 0.2;
       this.health = 100;
-      return;
     }
   }
 
   damage(points) {
     if ((this.health < 0)) {
       throw new Error('Можно атаковать только живого персонажа');
-    }
-    else {
+    } else {
       this.health -= points * (1 - this.defence / 100);
-      return;
     }
   }
 }
