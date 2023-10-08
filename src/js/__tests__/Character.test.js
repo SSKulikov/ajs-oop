@@ -12,7 +12,7 @@ test('test check create main class parent Character', () => {
 });
 
 test('test Error name', () => {
-  expect(() => new Character('T', 'Bowman')).toThrowError("Имя должно быть 2 - 10 символов!");
+  expect(() => new Character('T', 'Bowman')).toThrowError('Имя должно быть 2 - 10 символов!');
 });
 
 test('test Error type', () => {
