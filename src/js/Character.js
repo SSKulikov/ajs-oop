@@ -17,7 +17,7 @@ export default class Character {
 
   static checkType(type) {
     const listChildClass = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
-    if (listChildClass.includes(type)) {
+    if (!listChildClass.includes(type)) {
       throw new Error('Неверный тип!');
     }
     return type;
